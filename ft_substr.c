@@ -6,7 +6,7 @@
 /*   By: mmartin4 <mmartin4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 18:23:42 by mmartin4          #+#    #+#             */
-/*   Updated: 2024/05/21 19:09:24 by mmartin4         ###   ########.fr       */
+/*   Updated: 2024/08/26 19:51:22 by mmartin4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if ((int)start > ft_strlen(s))
-	{
-		substr = ft_calloc(1, sizeof(char));
-		if (!substr)
-			return (NULL);
-		return (substr);
-	}
+		return (ft_strdup(""));
 	if (len > strlen(s) - start)
 		len = strlen (s) - start;
 	substr = ft_calloc(len + 1, sizeof(char));

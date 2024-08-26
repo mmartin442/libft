@@ -6,7 +6,7 @@
 /*   By: mmartin4 <mmartin4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 17:32:43 by mmartin4          #+#    #+#             */
-/*   Updated: 2024/05/09 20:33:51 by mmartin4         ###   ########.fr       */
+/*   Updated: 2024/08/26 17:57:39 by mmartin4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,19 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	int		i;
+	char	cc;
+	
+	i = 0;
+	cc = (char) c;
+	while (s[i])
 	{
-		if (*s == c)
-			return ((char *)s);
-		else
-			s++;
+		if (s[i] == cc)
+			return ((char *) &s[i]);
+		i++;
 	}
-	if (c == '\0')
-		return ((char *)s);
+	if (s[i] == cc)
+		return ((char *) &s[i]);
 	return (NULL);
 }
 /*

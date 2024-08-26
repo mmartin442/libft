@@ -6,7 +6,7 @@
 #    By: mmartin4 <mmartin4@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 18:48:31 by mmartin4          #+#    #+#              #
-#    Updated: 2024/08/26 13:24:41 by mmartin4         ###   ########.fr        #
+#    Updated: 2024/08/26 14:44:26 by mmartin4         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 SRCS = ft_isalpha.c	\
 	   ft_isdigit.c \
-	   ft_isalnum.c
+	   ft_isalnum.c \
 	   ft_isascii.c \
 	   ft_isprint.c \
 	   ft_strlen.c \
