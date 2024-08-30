@@ -6,13 +6,13 @@
 /*   By: mmartin4 <mmartin4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 12:36:07 by mmartin4          #+#    #+#             */
-/*   Updated: 2024/08/26 16:50:09 by mmartin4         ###   ########.fr       */
+/*   Updated: 2024/08/30 15:17:52 by mmartin4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strcount(char *str, char c)
+static int	ft_strcount(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -21,21 +21,21 @@ static int	ft_strcount(char *str, char c)
 	count = 0;
 	if (!str[i])
 		return (0);
-	while (str[i] != '\0')
+	while (str[i])
 	{
 		if (str[i] == c)
 			i++;
 		else
 		{
 			count++;
-			while (str[i] != c && str[i] != '\0')
+			while (str[i] != c && str[i])
 				i++;
 		}
 	}
 	return (count);
 }
 
-void	ft_splitstr(char **finalstr, const char *s, char c)
+static char	**ft_splitstr(char **finalstr, const char *s, char c)
 {
 	int	i;
 	int	j;
@@ -58,6 +58,7 @@ void	ft_splitstr(char **finalstr, const char *s, char c)
 		}
 	}
 	finalstr[k] = '\0';
+	return (finalstr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -67,10 +68,11 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	strcount = ft_strcount((char *)s, c);
+	strcount = ft_strcount(s, c);
 	array = malloc(sizeof(char *) * (strcount + 1));
 	if (!array)
 		return (NULL);
+	array = ft_splitstr(array, s, c);
 	return (array);
 }
 /*
@@ -79,7 +81,6 @@ int main()
     char **split_str;
     char str[] = "hello,world,foo,bar";
     char c = ',';
-
     split_str = ft_split(str, c);
 
     if (split_str)

@@ -6,7 +6,7 @@
 /*   By: mmartin4 <mmartin4@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 19:35:17 by mmartin4          #+#    #+#             */
-/*   Updated: 2024/05/29 18:46:27 by mmartin4         ###   ########.fr       */
+/*   Updated: 2024/08/30 14:11:46 by mmartin4         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = f(i, s[i]);
 		i++;
 	}
-	str = '\0';
+	str[i] = '\0';
 	return (str);
 }
 /*
